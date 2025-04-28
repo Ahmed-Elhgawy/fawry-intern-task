@@ -1,7 +1,7 @@
 # Scenario
 |The Issue |How to confirm |Solution |
 |----------|---------------|---------|
-|DNS server is misconfigured |Use the command `cat /etc/resolv.conf` |Edit the file `/etc/resolv.conf` using `sudo vim /etc/resolv.conf` and configure the correct DNS server |
+|DNS server is misconfigured |Use the command `cat /etc/resolv.conf` [PNG-1](./issue1.png) |Edit the file `/etc/resolv.conf` using `sudo vim /etc/resolv.conf` and configure the correct DNS server |
 |DNS server is down |If the result of the command `dig internal.example.com` is a __timeout__ |Restart the DNS server and check the network (cables, switches, and routers |
 |DNS record is missing |If the result of the command `dig internal.example.com` returns __no answer__ |Add the correct A or CNAME record to the DNS server | 
 |Server IP address has changed |Use the command `ip addr show` to check the IP address |Update the corresponding record in the DNS server |
