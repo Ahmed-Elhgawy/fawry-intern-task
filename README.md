@@ -1,15 +1,41 @@
 # Custom Command (mygrep.sh)
-mygrep.sh is a bash script used to mimic a mini version of the grep command. \
-Its basic functionality is searching for a string (case-insensitive) in a single file and print the matching line in this file
+`mygrep.sh` is a Bash script designed to mimic a simplified version of the `grep` command. \
+It provides basic functionality for searching a string within a single file and printing matching lines. 
 
-### Command Options
-`-n` - - > Show line numbers for each match \
-`-v` - - > Invert the match (print lines that do not match) \
-`-h` - - > Show help
+### Features
+- Basic Search: Search for a string (case-insensitive by default) within a file.
+- Show Line Numbers: Optionally display the line numbers of matches.
+- Invert Match: Optionally display lines that do not match the search pattern.
+- Help Menu: Provide usage instructions.
 
-## How the script handles arguments and options.
-To handle options in the script, the `getopts` command has been used to retrieve options and option-arguments from a list of parameters, the command is storing the value of option in default variable called __opt__, in additional to __OPTIND__ that stores the value of arguments that entered after the options, and using case statement to define which option has been used and what to in each case, in additional to if statement to define the command that runs depending on the option has been used. \
-To handle the arguments in the script, using __positional parameters__ to get the arguments when running the script as `$1` defines the patterns and `$2` defines the filename, and using if statement to check if the user has been entered the arguments correctly, also to check if the file exists or not. \
-The `awk` command is also used in the script, it is used for fetch the pattern in from the file to mimic the `grep` command result. 
-## If regex or -i/-c/-l options were supported, how would the structure will change. 
-The i, c, and l options will be added to the `getopts` command, in additional to add more if statements to define the commands that run in each case. In case of the repeated commands in multiple statements, A function will be defined in the script and called when it need. 
+### Command Options 
+|Option	|Description|
+|-------|-----------|
+|`-n`	|Show line numbers for each matching line|
+|`-v`	|Invert match (display non-matching lines)|
+|`-h`	|Display help message and usage instructions|
+
+## Argument and Option Handling
+The script uses the `getopts` command to parse options and option arguments.
+- __Option Parsing:__
+-- `getopts` assigns the current option to a default variable (`opt`).
+-- `OPTIND` is used to track the index of the next positional argument after options.
+-- A `case` statement defines the behavior for each supported option.
+-- `if` statements handle command execution depending on the selected options.
+- __Argument Handling:__
+-- __Positional parameters__ are used to retrieve the search pattern and the filename:
+--- `$1` → search pattern
+--- `$2` → filename
+-- `if` statements validate:
+--- That the required arguments are provided.
+--- That the specified file exists.
+- __Pattern Matching:__
+-- The `awk` command is used to search the file for lines matching the given pattern, simulating the behavior of `grep`.
+
+## Future Enhancements (Support for -i, -c, -l, and Regular Expressions)
+If additional options such as -i, -c, or -l were to be supported:
+- New options would be added to the `getopts` string.
+- Additional `if` or `case` blocks would handle the logic for each new option.
+- To avoid code duplication:
+-- Common actions would be extracted into separate functions.
+-- Functions would be called appropriately depending on the selected options.
