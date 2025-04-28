@@ -3,10 +3,10 @@
 It provides basic functionality for searching a string within a single file and printing matching lines. 
 
 ### Features
-- Basic Search: Search for a string (case-insensitive by default) within a file.
-- Show Line Numbers: Optionally display the line numbers of matches.
-- Invert Match: Optionally display lines that do not match the search pattern.
-- Help Menu: Provide usage instructions.
+- __Basic Search:__ Search for a string (case-insensitive by default) within a file.
+- __Show Line Numbers:__ Optionally display the line numbers of matches.
+- __Invert Match:__ Optionally display lines that __do not__ match the search pattern.
+- __Help Menu:__ Provide usage instructions.
 
 ### Command Options 
 |Option	|Description|
