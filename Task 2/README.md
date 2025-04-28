@@ -11,5 +11,5 @@
  
 ### Bouns
 By default, the server checks its local file at `/etc/hosts` before querying the DNS server to resolve a web server's URL. This default behavior can be changed by editing the `/etc/nsswitch.conf` file. \
-[The Contant of `/etc/hosts` file](./Bouns1.png)
+[The Contant of `/etc/hosts` file](./Bouns1.png) \
 [The contant of `/etc/nsswitch.conf` file](./Bouns2.png)
